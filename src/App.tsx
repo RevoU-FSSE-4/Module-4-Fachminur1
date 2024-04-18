@@ -1,22 +1,17 @@
 import React from 'react' ;
 import './App.css';
-import ExampleOne  from './example/exampleOneComponent';
-import ExampleTwo from './example/exmapleTwoComponent';
-import PropsOneComponent from './propsExample/propsOneComp';
+import MultiStepForm from './Component/MultiStepForm';
 
 
 
-function App() {
-
-  const titles = ["FachmiNur", "NurFachmi", "NachmiRun"]
-
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <PropsOneComponent title='FachmiNur' description='Sedang Belajar'/>
-      <PropsOneComponent title='FachmiNur1' description='Sedang Belajar'/>
-      <PropsOneComponent title='FachmiNur2' description='Sedang Belajar'/>
+    <div>
+      <MultiStepForm />
     </div>
   );
-} 
+}
+
+
 
 export default App;
