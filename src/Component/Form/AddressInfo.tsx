@@ -39,40 +39,44 @@ const AddressInfo: React.FC<AddressInfoProps> = ({formData, onNext, onPrevious})
     return (
         <form onSubmit={formik.handleSubmit}>
             <div>
-                <label htmlFor="streetAddress">Address</label>
-                <input placeholder="Input your address" type="text" {...formik.getFieldProps('streetAddress')} />
+                <label className="block mb-1" htmlFor="streetAddress">Address</label>
+                <input className="px-3 py-2 border rounded-md w-full" placeholder="Input your address" type="text" {...formik.getFieldProps('streetAddress')} />
                 {formik.touched.streetAddress && formik.errors.streetAddress ? (
                     <p>{formik.errors.streetAddress}</p>
                 ) : null}
             </div>
 
             <div>
-                <label htmlFor="city">City</label>
-                <input placeholder="Input your city" type="text" {...formik.getFieldProps('city')} />
+                <label className="block mb-1" htmlFor="city">City</label>
+                <input className="px-3 py-2 border rounded-md w-full" placeholder="Input your city" type="text" {...formik.getFieldProps('city')} />
                 {formik.touched.city && formik.errors.city ? (
                     <p>{formik.errors.city}</p>
                 ) : null}
             </div>
 
             <div>
-                <label htmlFor="state">State</label>
-                <input placeholder="Input your state" type="text" {...formik.getFieldProps('state')} />
+                <label className="block mb-1" htmlFor="state">State</label>
+                <input className="px-3 py-2 border rounded-md w-full" placeholder="Input your state" type="text" {...formik.getFieldProps('state')} />
                 {formik.touched.state && formik.errors.state ? (
                     <p>{formik.errors.state}</p>
                 ) : null}
             </div>
 
             <div>
-                <label htmlFor="zipCode">ZIP Code</label>
-                <input placeholder="Input your ZIP Code" type="text" {...formik.getFieldProps('zipCode')} />
+                <label className="block mb-1" htmlFor="zipCode">ZIP Code</label>
+                <input className="px-3 py-2 border rounded-md w-full" placeholder="Input your ZIP Code" type="text" {...formik.getFieldProps('zipCode')} />
                 {formik.touched.zipCode && formik.errors.zipCode ? (
                     <p>{formik.errors.zipCode}</p>
                 ) : null}
             </div>
 
-            <div>
-                <button type="button" onClick={onPrevious}>Previous</button>
-                <button type="submit">Next</button>
+            <div className="flex justify-between">
+                <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" type="button" onClick={onPrevious}>
+                    Previous
+                 </button>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
+                    Next
+                </button>
             </div>
         </form>
     );

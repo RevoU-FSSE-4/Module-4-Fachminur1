@@ -30,24 +30,28 @@ const AccountInfo: React.FC<AccountInfoProps> = ({ formData, onPrevious }) => {
     return (
         <form onSubmit={formik.handleSubmit}>
             <div>
-                <label htmlFor="username">Username</label>
-                <input placeholder="Input your username" type="text" {...formik.getFieldProps('username')} />
+                <label className="block mb-1" htmlFor="username">Username</label>
+                <input className="px-3 py-2 border rounded-md w-full" placeholder="Input your username" type="text" {...formik.getFieldProps('username')} />
                 {formik.touched.username && formik.errors.username ? (
                     <p>{formik.errors.username}</p>
                 ) : null}
             </div>
 
             <div>
-                <label htmlFor="password">Password</label>
-                <input placeholder="Input your password" type="password" {...formik.getFieldProps('password')} />
+                <label className="block mb-1" htmlFor="password">Password</label>
+                <input className="px-3 py-2 border rounded-md w-full" placeholder="Input your password" type="password" {...formik.getFieldProps('password')} />
                 {formik.touched.password && formik.errors.password ? (
                     <p>{formik.errors.password}</p>
                 ) : null}
             </div>
 
-            <div>
-                <button type="button" onClick={onPrevious}>Previous</button>
-                <button type="submit">Next</button>
+            <div className="flex justify-between">
+                <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" type="button" onClick={onPrevious}>
+                    Previous
+                 </button>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
+                    Next
+                </button>
             </div>
         </form>
     );
