@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PublicRoute from "./Layout/PublicRoute";
 import ProtectRoute from "./Layout/ProtectRoute";
 import ContextProvider from "./Provider/Provider";
-import ListCategory from "./Containers/Category/ListToDo/ListToDo"; // Import ListCategory component directly
+import ListCategory from "./Containers/Category/ListToDo/ListToDo"; 
 
 const App = () => {
   const router = createBrowserRouter([
@@ -22,17 +22,15 @@ const App = () => {
       ],
     },
     {
-      path: "*", // Wildcard route for 404
+      path: "*", 
       element: <h1>404</h1>,
     },
     {
       element: <ProtectRoute />,
       children: [
-        // Remove the old route configuration for "/list-category" path
-        // Add the ListCategory component wrapped inside a route object
         {
-          path: "/list-category", // Define the path for the ListCategory component
-          element: <ListCategory /> // Wrap ListCategory inside a route object
+          path: "/list-category", 
+          element: <ListCategory /> 
         }
       ],
     },
